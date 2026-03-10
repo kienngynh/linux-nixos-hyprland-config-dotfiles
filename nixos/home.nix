@@ -4,6 +4,9 @@
 
 { config, pkgs, userConfig, ... }:
 
+let
+  rawConfigDir = "/etc/nixos/home/.config";
+in
 {
   home.stateVersion = userConfig.stateVersion;
   home.username = userConfig.username;
@@ -15,10 +18,7 @@
   # Waybar: auto-reloads by default
   # Helper to symlink directly from the cloned repo instead of copying to Nix store
   # This enables instant hot-reloading for apps that support it
-  let
-    rawConfigDir = "/etc/nixos/home/.config";
-  in {
-    xdg.configFile = {
+  xdg.configFile = {
     "hypr".source = config.lib.file.mkOutOfStoreSymlink "${rawConfigDir}/hypr";
     "kitty".source = config.lib.file.mkOutOfStoreSymlink "${rawConfigDir}/kitty";
     "waybar".source = config.lib.file.mkOutOfStoreSymlink "${rawConfigDir}/waybar";
@@ -77,6 +77,5 @@
   home.file = {
     ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/home/.gitconfig";
     ".gtkrc-2.0".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/home/.gtkrc-2.0";
-    ".npmrc".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/home/.npmrc";
   };
 }
