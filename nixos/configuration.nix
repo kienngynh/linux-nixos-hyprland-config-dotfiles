@@ -5,6 +5,9 @@
 { userConfig, ... }:
 
 {
+  imports = [
+    ./gpu-profile.nix
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -14,5 +17,8 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   # Set in flake.nix userConfig.stateVersion
   system.stateVersion = userConfig.stateVersion;
+
+  # Detect and auto-load hardware drivers
+  hardware.enableRedistributableFirmware = true;
 
 }
