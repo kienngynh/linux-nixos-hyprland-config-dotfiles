@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, userConfig, ... }:
 
 {
   # programs.mosh = {
@@ -11,7 +11,7 @@
   #     PasswordAuthentication = false;
   #     KbdInteractiveAuthentication = false;
   #     PermitRootLogin = "no";
-  #     AllowUsers = [ "xnm" ];
+  #     AllowUsers = [ userConfig.username ];
   #   };
   # };
 

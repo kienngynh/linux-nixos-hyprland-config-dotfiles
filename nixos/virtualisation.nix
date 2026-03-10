@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, userConfig, ... }:
 
 {
   # Enable Kasm
@@ -19,7 +19,7 @@
   #     daemon.settings.features.cdi = true;
   #   };
   # };
-  # users.extraGroups.docker.members = [ "xnm" ];
+  # users.extraGroups.docker.members = [ userConfig.username ];
 
   virtualisation.docker.enable = false;
 
@@ -37,7 +37,7 @@
     defaultNetwork.settings.dns_enabled = true;
   };
   environment.variables.DBX_CONTAINER_MANAGER = "podman";
-  users.extraGroups.podman.members = [ "xnm" ];
+  users.extraGroups.podman.members = [ userConfig.username ];
 
   environment.systemPackages = with pkgs; [
     nvidia-docker

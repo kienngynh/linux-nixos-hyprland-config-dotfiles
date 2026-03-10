@@ -1,4 +1,4 @@
-{ ... }:
+{ userConfig, ... }:
 
 {
   # Enable the OpenSSH daemon.
@@ -8,7 +8,7 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
-      AllowUsers = [ "xnm" ];
+      AllowUsers = [ userConfig.username ];
     };
   };
 }

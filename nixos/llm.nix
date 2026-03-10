@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, userConfig, ... }:
 
 {
 
@@ -21,7 +21,7 @@
         formats = [ "html" "json" ];
       };
     };
-    environmentFile = "${config.users.users.xnm.home}/.config/.env.searxng"; # FIXME: The location of the `.env` file where you need to set up the key
+    environmentFile = "${config.users.users.${userConfig.username}.home}/.config/.env.searxng"; # The location of the `.env` file for the SearXNG secret key
   };
 
   services.n8n = {
