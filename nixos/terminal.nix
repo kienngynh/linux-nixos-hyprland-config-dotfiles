@@ -1,12 +1,13 @@
 { pkgs, ... }:
 
 {
-  programs.fish.enable = true;
+  environment.shells = with pkgs; [ nushell ];
 
   environment.systemPackages = with pkgs; [
     wezterm-flake
-    kitty
-    cool-retro-term
+    nushell
+    spotify-player
+    ncspot
 
     starship
     helix

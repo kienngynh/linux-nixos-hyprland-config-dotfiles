@@ -41,6 +41,7 @@
     "qutebrowser".source = ../home/.config/qutebrowser;
     "wezterm".source = ../home/.config/wezterm;
     "zellij".source = ../home/.config/zellij;
+    "nushell".source = ../home/.config/nushell;
     "aichat".source = ../home/.config/aichat;
     "opencode".source = ../home/.config/opencode;
     "posting".source = ../home/.config/posting;

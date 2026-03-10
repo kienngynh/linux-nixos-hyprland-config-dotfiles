@@ -12,9 +12,9 @@
     ];
   };
   services.mpd.enable = true;
-  programs.thunar.enable = true;
+  programs.thunar.enable = false;
   programs.xfconf.enable = true;
-  services.tumbler.enable = true; 
+  services.tumbler.enable = false; 
   services.fwupd.enable = true;
   # services.gnome.core-shell.enable = true;
   # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
@@ -41,11 +41,6 @@
     xdg-utils
     wtype
     wlrctl
-    waybar
-    rofi
-    dunst
-    avizo
-    wlogout
     gifsicle
     libfido2
   ];

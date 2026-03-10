@@ -6,14 +6,11 @@
     isNormalUser = true;
     description = userConfig.username;
     extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" ];
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
     packages = with pkgs; [
-      spotify
-      pear-desktop
       discord
       telegram-desktop
       vscodium
-      brave
     ];
   };
 
