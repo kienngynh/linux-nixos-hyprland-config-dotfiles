@@ -7,7 +7,6 @@
 {
   home.stateVersion = userConfig.stateVersion;
   home.username = userConfig.username;
-  home.homeDirectory = "/home/${userConfig.username}";
 
   # Symlink app configs — edits take effect immediately (hot-reload)
   # Hyprland auto-reloads on config change
