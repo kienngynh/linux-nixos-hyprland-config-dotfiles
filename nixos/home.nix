@@ -15,9 +15,10 @@
   # Waybar: auto-reloads by default
   # Helper to symlink directly from the cloned repo instead of copying to Nix store
   # This enables instant hot-reloading for apps that support it
-  rawConfigDir = "/etc/nixos/home/.config";
-
-  xdg.configFile = {
+  let
+    rawConfigDir = "/etc/nixos/home/.config";
+  in {
+    xdg.configFile = {
     "hypr".source = config.lib.file.mkOutOfStoreSymlink "${rawConfigDir}/hypr";
     "kitty".source = config.lib.file.mkOutOfStoreSymlink "${rawConfigDir}/kitty";
     "waybar".source = config.lib.file.mkOutOfStoreSymlink "${rawConfigDir}/waybar";
